@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import spacy
+import subprocess
+import importlib.util
 import re
 import regex
 import pdfplumber
@@ -94,6 +96,10 @@ def extract_experience(text):
             years += end_year - int(start)
         return years
     return 0
+
+model_name = "en_core_web_sm"
+if importlib.util.find_spec(model_name) is None:
+    subprocess.run(["python", "-m", "spacy", "download", model_name])
 
 def analyze_resume(resume_text, job_description, skills_list):
     nlp = spacy.load('en_core_web_sm')
