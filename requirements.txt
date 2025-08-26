@@ -1,0 +1,12 @@
+streamlit
+spacy
+pandas
+scikit-learn
+pdfplumber
+python-docx
+PyPDF2
+Pillow
+pytesseract
+matplotlib
+openpyxl
+regex
